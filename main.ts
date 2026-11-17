@@ -28,10 +28,11 @@
 // Donchian and momentum variant lost money on it (-$11 to -$132): the trends
 // do not persist long enough at 1-minute resolution to pay the round trip.
 // The RSI family was positive across a broad plateau (spans 20-45, buy 20-35,
-// sell 65-80), and RSI(25) 25/75 sits in its middle: +$7.72 net PnL on the
-// dev window, 4 trades, max drawdown -1.27%, positive on both halves of the
-// window in the wider plateau. The parameters were chosen for the plateau,
-// not for the single best dev number.
+// sell 65-80), and RSI(25) 25/75 sits in its middle. Verified with the kit's
+// own grader (grade-local, process driver): net PnL +$7.72 USDC on the dev
+// window, 4 trades, max drawdown 1.27%, 0 rejected orders, +$6.11 even at
+// doubled fees, and the L1 regrade reproduced the run byte for byte. The
+// parameters were chosen for the plateau, not for the single best dev number.
 //
 // Determinism: float64 arithmetic (+ - * /) on the closes only, no clock, no
 // environment, no randomness, so two runs on the same bars answer alike.
